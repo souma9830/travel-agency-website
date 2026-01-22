@@ -1,0 +1,22 @@
+/* css/about.css */
+
+.about-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    line-height: 1.8;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Mobile responsive hook */
+@media (max-width: 600px) {
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+}

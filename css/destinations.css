@@ -1,0 +1,22 @@
+/* css/destinations.css */
+
+/* The main container for our North Bengal cards */
+#destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 30px 0;
+    width: 100%;
+}
+
+/* Base card structure - leaving design details for contributors */
+.card {
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
