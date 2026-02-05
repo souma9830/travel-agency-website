@@ -51,49 +51,43 @@ Our current focus is exclusively on the **Northern part of West Bengal, India (N
 
 ---
 
-## 🤝 How to Contribute (The Workflow)
-
+🤝 How to Contribute (The Workflow)
 To ensure your contributions are merged smoothly, please follow this step-by-step workflow:
 
-### 1. Fork the Project
-Click the **Fork** button at the top right of this page to create a copy of this repository in your own GitHub account.
+1. Fork the Project
+Click the Fork button at the top right of this page to create a copy of this repository in your own GitHub account.
 
-### 2. Clone your forked repository
-```bash
-git clone [https://github.com/](https://github.com/)<your_github_username>/travel-agency-website.git
+2. Clone your forked repository
+Open your terminal and run the following command:
 
+Bash
+git clone https://github.com/<your_github_username>/travel-agency-website.git
 3. Create a New Branch
 Always work on a new branch for each feature or fix to keep the main branch clean:
 
-```bash
+Bash
 git checkout -b fix-issue-<ISSUE-NUMBER>
-
 4. Check Changed Files
 After you have added your changes, check which files were modified:
 
-```bash
+Bash
 git status -s
-
 5. Add Files to Staging
 Add all the changed files to the staging area to prepare them for a commit:
 
-```bash
+Bash
 git add .
-
 6. Commit Your Changes
 Save your progress with a clear, descriptive message about what you changed:
 
-```bash
+Bash
 git commit -m "Added: <EXPLAIN-YOUR-CHANGES>"
-
 7. Push Your Changes
 Upload your local branch changes to your forked repository on GitHub:
 
-```bash
+Bash
 git push origin fix-issue-<ISSUE-NUMBER>
-
 8. Open a Pull Request
 Go to the original sanglaphalder/travel-agency-website repository on GitHub. You will see a green "Compare & pull request" button. Click it and describe your work!
 
----
-*Created for the Ruler Tours Open Source Showcase - JWoC 2026*
+Created for the Ruler Tours Open Source Showcase - JWoC 2026
