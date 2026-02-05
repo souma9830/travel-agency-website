@@ -60,7 +60,7 @@ Click the **Fork** button at the top right of this page to create a copy of this
 
 ### 2. Clone your forked repository
 ```bash
-git clone [https://github.com/](https://github.com/)<your_github_username>/travel-agency-website.git
+git clone https://github.com/<your_github_username>/travel-agency-website.git
 ```
 ### 3. Create a New Branch
 Always work on a new branch for each feature or fix to keep the main branch clean:
