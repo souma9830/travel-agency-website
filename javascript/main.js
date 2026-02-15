@@ -15,9 +15,9 @@ function renderTours() {
     northBengalTours.forEach(tour => {
         const card = document.createElement('div');
         card.className = "card"; // Uses the CSS file for layout
-        
+
         // HOOK: These inline styles are meant to be moved to destinations.css by contributors
-        card.style.border = "1px solid #ddd"; 
+        card.style.border = "1px solid #ddd";
         card.style.padding = "20px";
         card.style.borderRadius = "12px";
         card.style.backgroundColor = "#fff";
@@ -31,10 +31,15 @@ function renderTours() {
             </div>
             <a href="package.html?id=${tour.id}" style="margin-top:15px; display:inline-block; font-weight:bold; color:black;">Explore Package →</a>
         `;
-        
+
         grid.appendChild(card);
     });
 }
+fetch("html/footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+    });
 
 /**
  * HOOK: SEARCH/FILTER FUNCTIONALITY

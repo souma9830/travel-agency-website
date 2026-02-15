@@ -1,0 +1,48 @@
+.footer {
+  background-color: #111;
+  color: #ddd;
+  padding: 60px 0 20px;
+}
+
+.footer-container {
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer h2,
+.footer h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+  font-size: 14px;
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: white;
+  transition: 0.3s;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+}

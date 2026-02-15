@@ -1,4 +1,5 @@
 /* css/global.css */
+@import url("footer.css");
 :root {
     --primary: #333;
     --accent: #007BFF;
