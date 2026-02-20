@@ -8,12 +8,256 @@
 }
 
 body.dark {
-    --primary: #66BB6A;
-    --accent: #FFA726;
-    --bg: #121212;
-    --text: #E0E0E0;
-    --card-bg: #1E1E1E;
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    --primary: #00BFA6;        
+    --accent: #FF7043;         
+    --bg: #0B1C2D;           
+    --text: #F5F7FA;           
+    --card-bg: #13293D;     
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Headings */
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #FFFFFF;
+}
+
+body.dark h1 {
+    font-size: 2.8rem;
+    text-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+}
+
+body.dark h2 {
+    font-size: 2rem;
+    color: #E6F7F5;
+}
+
+body.dark h3 {
+    font-size: 1.3rem;
+    color: #CFF5F0;
+}
+
+/* Paragraphs */
+
+body.dark p {
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(245, 247, 250, 0.85);
+}
+
+/* Navigation */
+
+body.dark .nav-links a {
+    font-size: 1rem;
+}
+
+/* Card Titles */
+
+body.dark .card h3 {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Price Styling */
+
+body.dark .price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+/* Buttons */
+
+body.dark .btn-primary {
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+/* Dark Mode Background Depth */
+
+body.dark {
+    background: linear-gradient(
+        180deg,
+        #0B1C2D 0%,
+        #0F2438 100%
+    );
+}
+
+/* Navbar */
+
+body.dark .navbar {
+    background: linear-gradient(to right, #0E2A40, #123B55);
+    height: 80px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* Page Hero */
+
+body.dark .page-hero {
+    background:
+        linear-gradient(rgba(5,15,25,0.75), rgba(5,15,25,0.7)),
+        url("assets/bg.png") center/cover no-repeat;
+}
+
+/* Hero Section */
+
+body.dark .hero {
+    background:
+        linear-gradient(rgba(5,15,25,0.75), rgba(5,15,25,0.7)),
+        url("assets/hbg.png") center/cover no-repeat;
+}
+
+body.dark .hero h1 {
+    white-space: nowrap;
+    font-size: clamp(2rem, 3.2vw, 3rem);
+}
+
+/* Cards */
+
+body.dark .card,
+body.dark .feature-box,
+body.dark .contact-form-box {
+    background: #13293D;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Card Hover */
+
+body.dark .card:hover,
+body.dark .feature-box:hover {
+    transform: translateY(-12px);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.7),
+        0 0 20px rgba(0,191,166,0.2);
+}
+
+/* Buttons */
+
+body.dark .btn-primary {
+    background: linear-gradient(
+        135deg,
+        #00BFA6,
+        #009688
+    );
+    color: #ffffff;
+    border: 1px solid rgba(0,191,166,0.3);
+    box-shadow: 
+        0 8px 20px rgba(0,0,0,0.5),
+        0 0 15px rgba(0,191,166,0.15);
+    transition: all 0.3s ease;
+}
+
+body.dark .btn-primary:hover {
+    background: linear-gradient(
+        135deg,
+        #26C6DA,
+        #00BFA6
+    );
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.7),
+        0 0 20px rgba(0,191,166,0.25);
+}
+
+body.dark .contact-section {
+    background: linear-gradient(
+        180deg,
+        #0F2438 0%,
+        #0B1C2D 100%
+    );
+    padding: 80px 20px;
+}
+
+body.dark .contact-section h2 {
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+body.dark .contact-form-box {
+    background: rgba(19, 41, 61, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(0, 191, 166, 0.15);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(0, 191, 166, 0.05);
+    transition: 0.4s ease;
+}
+
+body.dark .contact-form-box input,
+body.dark .contact-form-box textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #F5F7FA;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+}
+
+/* Dark Mode - Autofill Fix */
+
+body.dark .contact-form-box input:-webkit-autofill,
+body.dark .contact-form-box textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.05) inset;
+    -webkit-text-fill-color: #F5F7FA;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+body.dark .contact-form-box input:focus,
+body.dark .contact-form-box textarea:focus {
+    outline: none;
+    border-color: #00BFA6;
+    box-shadow: 0 0 12px rgba(0, 191, 166, 0.3);
+}
+
+body.dark .contact-form-box input::placeholder,
+body.dark .contact-form-box textarea::placeholder {
+    color: rgba(245, 247, 250, 0.5);
+}
+
+/* Footer */
+
+body.dark .footer {
+    background: linear-gradient(to right, #0E2A40, #123B55);
+}
+
+/* Links */
+
+body.dark .nav-links a::after {
+    background: var(--accent);
+}
+
+/* Dark Mode Typography Refinement */
+
+body.dark h1,
+body.dark h2 {
+    letter-spacing: 1px;
+}
+
+body.dark h1 {
+    color: #FFFFFF;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+body.dark p {
+    color: rgba(245,247,250,0.85);
+}
+
+body.dark .price {
+    color: var(--accent);
 }
 
 /* GLOBAL */
@@ -458,8 +702,9 @@ body {
     }
 
     .hero h1 {
-        font-size: 1.8rem;
-    }
+    white-space: nowrap;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
 
     .contact-container {
         grid-template-columns: 1fr;
