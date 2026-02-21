@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruler Tours</title>
+    <title>Login - Ruler Tours</title>
     <link rel="icon" type="image/png" href="assets/light_logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap"
         rel="stylesheet">
@@ -29,78 +29,38 @@
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
         <div class="nav-right">
-            <a href="login.html" class="btn-login">Login</a>
             <button id="theme-toggle">🌙</button>
             <div class="hamburger" id="hamburger">☰</div>
         </div>
     </header>
-    <section class="page-hero">
-        <h1>Tour Packages</h1>
-    </section>
-    <section class="card-container">
-        <div class="card">
-            <img src="assets/skmrt.png">
-            <h3>Lava & Loleygaon Scenic Escape</h3>
-            <p>Duration: 3 Days</p>
-            <p>Timing: 8AM - 6PM</p>
-            <p class="price">₹8,999</p>
-            <button class="btn-primary">Book Now</button>
-        </div>
-        <div class="card">
-            <img src="assets/khh.png">
-            <h3>Kalimpong Heritage Hills</h3>
-            <p>Duration: 2 Days</p>
-            <p>Timing: 7AM - 5PM</p>
-            <p class="price">₹6,499</p>
-            <button class="btn-primary">Book Now</button>
-        </div>
-        <div class="card">
-            <img src="assets/dvt.png">
-            <h3>Dooars Tea Garden Retreat</h3>
-            <p>Duration: 4 Days</p>
-            <p>Timing: 7AM - 7PM</p>
-            <p class="price">₹12,499</p>
-            <button class="btn-primary">Book Now</button>
-        </div>
-        <div class="card">
-            <img src="assets/mlc.png">
-            <h3>Rishop Mountain View Stay</h3>
-            <p>Duration: 2 Days</p>
-            <p>Timing: 9AM - 6PM</p>
-            <p class="price">₹4,999</p>
-            <button class="btn-primary">Book Now</button>
-        </div>
-        <div class="card">
-            <img src="assets/jws.png">
-            <h3>Jaldapara National Park Safari</h3>
-            <p>Duration: 2 Days</p>
-            <p>Timing: 6AM - 4PM</p>
-            <p class="price">₹7,499</p>
-            <button class="btn-primary">Book Now</button>
-        </div>
-        <div class="card">
-            <img src="assets/bfjrt.png">
-            <h3>Buxa Fort & Jayanti River Trail</h3>
-            <p>Duration: 2 Days</p>
-            <p>Timing: 6AM - 5PM</p>
-            <p class="price">₹6,999</p>
-            <button class="btn-primary">Book Now</button>
+
+    <section class="auth-section">
+        <div class="auth-container">
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Login</button>
+            </form>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
         </div>
     </section>
+
     <footer class="footer">
         <div class="footer-content">
-
             <div>
                 <h3>Ruler Tours</h3>
                 <p>Discover rural beauty & eco adventures</p>
             </div>
-
             <div>
                 <h4>Quick Links</h4>
                 <p><a href="tours.html">Tours</a></p>
                 <p><a href="rentals.html">Rentals</a></p>
             </div>
-
             <div>
                 <h4>Contact</h4>
                 <p>+91 98765 43210</p>
@@ -112,11 +72,10 @@
                     <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-
         </div>
-
         <p class="copyright">&copy; 2026 Ruler Tours. All rights reserved</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
