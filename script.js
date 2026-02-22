@@ -1,4 +1,11 @@
+const { createClient } = supabase;
+const supabaseClient = createClient(
+    "https://okvnakjduwhlyzskynhp.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rdm5ha2pkdXdobHl6c2t5bmhwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0NDIyMDcsImV4cCI6MjA4NjAxODIwN30.3ashHYpyAMUeelrhGGgbk07ZZyd5aahCpdFUYIFy8uY"
+);
+
 document.addEventListener("DOMContentLoaded", function () {
+
 
     const hamburger = document.getElementById("hamburger");
     const navLinks = document.getElementById("nav-links");
@@ -112,7 +119,51 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Google Auth Logic
+    const googleBtn = document.getElementById("googleBtn");
+    if (googleBtn) {
+        googleBtn.addEventListener("click", async () => {
+            const { data, error } = await supabaseClient.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: window.location.href // Redirect back to current page
+                }
+            });
+            if (error) showToast(error.message, "error");
+        });
+    }
+
+    // Handle Supabase Auth state change
+    supabaseClient.auth.onAuthStateChange(async (event, session) => {
+        if (event === 'SIGNED_IN' && session) {
+            // Only trigger if we don't have a backend token or it's a social login
+            if (!localStorage.getItem("token")) {
+                try {
+                    const response = await fetch(`${API_URL}/google-auth`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ token: session.access_token })
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        showToast(data.message);
+                        localStorage.setItem("token", data.token);
+                        localStorage.setItem("user", JSON.stringify(data.userData));
+                        setTimeout(() => {
+                            window.location.href = "index.html";
+                        }, 1500);
+                    } else {
+                        showToast(data.message, "error");
+                    }
+                } catch (err) {
+                    showToast("Backend connection failed", "error");
+                }
+            }
+        }
+    });
+
     // Login Logic
+
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         loginForm.addEventListener("submit", async (e) => {
