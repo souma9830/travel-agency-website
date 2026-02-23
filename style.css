@@ -969,6 +969,78 @@ body.no-scroll {
     gap: 15px;
 }
 
+/* PASSWORD SHOW / HIDE ICON */
+
+.password-group {
+    position: relative;
+}
+
+.password-group input {
+    width: 100%;
+    padding-right: 45px; /* space for eye icon */
+}
+
+/* eye icon */
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+    color: #777;
+    transition: 0.25s ease;
+}
+
+/* hover effect */
+.toggle-password:hover {
+    color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* DARK MODE SUPPORT */
+body.dark .toggle-password {
+    color: rgba(245,247,250,0.6);
+}
+
+body.dark .toggle-password:hover {
+    color: var(--accent);
+}
+
+/* ===== PASSWORD ICON DARK MODE FIX ===== */
+
+.password-group {
+    position: relative;
+}
+
+.password-group input {
+    padding-right: 48px;
+}
+
+/* default (light mode) */
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 17px;
+    color: #6b7280;   /* stronger gray */
+    opacity: 1;
+}
+
+/* DARK MODE — HIGH CONTRAST */
+body.dark .toggle-password {
+    color: #00BFA6;   /* uses your theme primary */
+    opacity: 0.9;
+}
+
+/* hover glow */
+body.dark .toggle-password:hover {
+    color: #26C6DA;
+    transform: translateY(-50%) scale(1.15);
+}
+
 @media (max-width: 768px) {
     .profile-card {
         flex-direction: column;
