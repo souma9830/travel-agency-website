@@ -1,0 +1,222 @@
+{
+    "tourPackages": [
+        {
+            "id": "lava-loleygaon-001",
+            "title": "Lava & Loleygaon Scenic Escape",
+            "location": "Kalimpong District, West Bengal",
+            "duration": "3 Days",
+            "timing": "8AM - 6PM",
+            "price": 8999,
+            "rating": 4.7,
+            "overview": "A peaceful Himalayan getaway surrounded by pine forests, misty hills and panoramic sunrise views.",
+            "image": "assets/skmrt.png",
+            "environment": {
+                "landscape": "Dense pine forests, mountain valleys, sunrise viewpoints",
+                "crowdLevel": "Low to Moderate",
+                "noiseLevel": "Very Quiet",
+                "airQuality": "Fresh and Pollution-Free"
+            },
+            "climate": {
+                "summer": "15°C - 25°C (Pleasant)",
+                "winter": "5°C - 12°C (Cold)",
+                "monsoon": "Heavy rainfall, lush greenery",
+                "bestTimeToVisit": "October to April"
+            },
+            "accommodation": {
+                "roomType": "Deluxe Mountain View Rooms",
+                "roomQuality": "Clean, Cozy, Wooden Interiors",
+                "bedType": "Double / Queen Size",
+                "bathroom": "Attached with Hot Water",
+                "wifi": "Available (Limited Speed)",
+                "view": "Mountain & Forest View"
+            },
+            "amenities": [
+                "Free Breakfast",
+                "Campfire Night",
+                "Sightseeing Cab",
+                "Parking Facility",
+                "24x7 Room Service"
+            ],
+            "activities": [
+                "Sunrise View at Loleygaon",
+                "Canopy Walk",
+                "Nature Walk",
+                "Photography",
+                "Local Market Visit"
+            ],
+            "food": {
+                "type": "Veg & Non-Veg",
+                "localSpeciality": "Nepali & Bengali Cuisine",
+                "mealPlan": "Breakfast Included"
+            },
+            "transportation": {
+                "pickup": "NJP Railway Station / Bagdogra Airport",
+                "localTravel": "Private Cab",
+                "roadCondition": "Hilly but Good"
+            },
+            "safety": {
+                "medicalFacility": "Nearby Primary Health Center",
+                "safeForFamily": true,
+                "safeForCouples": true
+            },
+            "cancellationPolicy": "Free cancellation up to 48 hours before departure.",
+            "contactSupport": "24x7 Customer Support Available"
+        },
+        {
+            "id": "kalimpong-heritage-002",
+            "title": "Kalimpong Heritage Hills",
+            "location": "Kalimpong, West Bengal",
+            "duration": "2 Days",
+            "timing": "7AM - 5PM",
+            "price": 6499,
+            "rating": 4.5,
+            "overview": "Explore colonial architecture, monasteries, flower nurseries and scenic hilltop views.",
+            "image": "assets/khh.png",
+            "environment": {
+                "landscape": "Hill Town, Flower Nurseries, Monasteries",
+                "crowdLevel": "Moderate",
+                "noiseLevel": "Moderate",
+                "airQuality": "Good"
+            },
+            "climate": {
+                "summer": "18°C - 28°C",
+                "winter": "7°C - 15°C",
+                "bestTimeToVisit": "September to May"
+            },
+            "accommodation": {
+                "roomType": "Premium Heritage Hotel",
+                "roomQuality": "Modern with Hill View Balcony",
+                "bathroom": "Attached, Geyser Available",
+                "wifi": "High Speed"
+            },
+            "amenities": [
+                "Complimentary Breakfast",
+                "Sightseeing Tour",
+                "Monastery Visit",
+                "Flower Garden Visit"
+            ],
+            "activities": [
+                "Deolo Hill Visit",
+                "Durpin Monastery",
+                "Local Shopping"
+            ],
+            "food": {
+                "type": "Multi Cuisine",
+                "localSpeciality": "Momos, Thukpa"
+            },
+            "safety": {
+                "safeForFamily": true,
+                "safeForKids": true
+            }
+        },
+        {
+            "id": "dooars-tea-003",
+            "title": "Dooars Tea Garden Retreat",
+            "location": "Dooars, West Bengal",
+            "duration": "4 Days",
+            "timing": "7AM - 7PM",
+            "price": 12499,
+            "rating": 4.8,
+            "overview": "Relax in tea gardens, riverside resorts and wildlife rich forests of Dooars.",
+            "image": "assets/dvt.png",
+            "environment": {
+                "landscape": "Tea Gardens, Rivers, Forest",
+                "crowdLevel": "Low",
+                "airQuality": "Excellent"
+            },
+            "climate": {
+                "summer": "22°C - 35°C",
+                "winter": "10°C - 20°C",
+                "bestTimeToVisit": "October to March"
+            },
+            "accommodation": {
+                "roomType": "Luxury Tea Estate Resort",
+                "roomQuality": "Spacious AC Rooms",
+                "bathroom": "Modern, 24hr Hot Water",
+                "wifi": "Available"
+            },
+            "amenities": [
+                "Tea Garden Walk",
+                "River Side Stay",
+                "Wildlife Safari",
+                "Bonfire"
+            ],
+            "activities": [
+                "Tea Plucking Experience",
+                "Elephant Safari",
+                "Bird Watching"
+            ]
+        },
+        {
+            "id": "rishop-004",
+            "title": "Rishop Mountain View Stay",
+            "location": "Rishop, West Bengal",
+            "duration": "2 Days",
+            "timing": "9AM - 6PM",
+            "price": 4999,
+            "rating": 4.6,
+            "overview": "A peaceful offbeat destination with stunning Kanchenjunga views.",
+            "image": "assets/mlc.png",
+            "environment": {
+                "landscape": "Snow View Mountains, Pine Forest",
+                "crowdLevel": "Very Low",
+                "noiseLevel": "Silent"
+            },
+            "climate": {
+                "winter": "0°C - 10°C",
+                "summer": "10°C - 22°C",
+                "bestTimeToVisit": "October to April"
+            },
+            "accommodation": {
+                "roomType": "Standard Hill Cottage",
+                "roomQuality": "Basic but Clean",
+                "bathroom": "Attached"
+            },
+            "activities": [
+                "Sunrise View",
+                "Trekking",
+                "Photography"
+            ]
+        },
+        {
+            "id": "jaldapara-005",
+            "title": "Jaldapara National Park Safari",
+            "location": "Dooars, West Bengal",
+            "duration": "2 Days",
+            "timing": "6AM - 4PM",
+            "price": 7499,
+            "rating": 4.7,
+            "overview": "Experience wildlife safari in the famous one-horned rhinoceros habitat.",
+            "image": "assets/jws.png",
+            "environment": {
+                "landscape": "Grasslands & Forest",
+                "wildlife": "Rhinos, Elephants, Deer"
+            },
+            "activities": [
+                "Jeep Safari",
+                "Elephant Safari",
+                "Bird Watching"
+            ]
+        },
+        {
+            "id": "buxa-006",
+            "title": "Buxa Fort & Jayanti River Trail",
+            "location": "Alipurduar, West Bengal",
+            "duration": "2 Days",
+            "timing": "6AM - 5PM",
+            "price": 6999,
+            "rating": 4.5,
+            "overview": "Historical fort trek and peaceful river side nature trail.",
+            "image": "assets/bfjrt.png",
+            "environment": {
+                "landscape": "Fort Trek, River Trail",
+                "crowdLevel": "Low"
+            },
+            "activities": [
+                "Fort Trekking",
+                "River Walk",
+                "Photography"
+            ]
+        }
+    ]
+}
