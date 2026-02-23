@@ -723,6 +723,17 @@ body {
     transform: scale(1.05);
 }
 
+body.dark .btn-google {
+    background: #1A365D !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #F5F7FA !important;
+}
+
+body.dark .btn-google:hover {
+    background: #234B82 !important;
+}
+
+
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
