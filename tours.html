@@ -2,71 +2,35 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ruler Tours</title>
-  <link rel="icon" type="image/png" href="assets/light_logo.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/light_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet">
+  <script src="javascript/auth-guard.js"></script>
 </head>
 
 <body>
   <section class="page-hero">
     <h1>Tour Packages</h1>
   </section>
-  <section class="card-container">
-    <div class="card">
-      <img src="assets/skmrt.png" />
-      <h3>Lava & Loleygaon Scenic Escape</h3>
-      <p>Duration: 3 Days</p>
-      <p>Timing: 8AM - 6PM</p>
-      <p class="price">₹8,999</p>
-      <button class="btn-primary">Book Now</button>
-    </div>
-    <div class="card">
-      <img src="assets/khh.png" />
-      <h3>Kalimpong Heritage Hills</h3>
-      <p>Duration: 2 Days</p>
-      <p>Timing: 7AM - 5PM</p>
-      <p class="price">₹6,499</p>
-      <button class="btn-primary">Book Now</button>
-    </div>
-    <div class="card">
-      <img src="assets/dvt.png" />
-      <h3>Dooars Tea Garden Retreat</h3>
-      <p>Duration: 4 Days</p>
-      <p>Timing: 7AM - 7PM</p>
-      <p class="price">₹12,499</p>
-      <button class="btn-primary">Book Now</button>
-    </div>
-    <div class="card">
-      <img src="assets/mlc.png" />
-      <h3>Rishop Mountain View Stay</h3>
-      <p>Duration: 2 Days</p>
-      <p>Timing: 9AM - 6PM</p>
-      <p class="price">₹4,999</p>
-      <button class="btn-primary">Book Now</button>
-    </div>
-    <div class="card">
-      <img src="assets/jws.png" />
-      <h3>Jaldapara National Park Safari</h3>
-      <p>Duration: 2 Days</p>
-      <p>Timing: 6AM - 4PM</p>
-      <p class="price">₹7,499</p>
-      <button class="btn-primary">Book Now</button>
-    </div>
-    <div class="card">
-      <img src="assets/bfjrt.png" />
-      <h3>Buxa Fort & Jayanti River Trail</h3>
-      <p>Duration: 2 Days</p>
-      <p>Timing: 6AM - 5PM</p>
-      <p class="price">₹6,999</p>
-      <button class="btn-primary">Book Now</button>
-    </div>
+  <section class="card-container" id="tour-cards-container">
+    <!-- Dynamic cards will be generated here -->
   </section>
+
+  <!-- Tour Details Modal -->
+  <div id="tourModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div id="modal-body">
+        <!-- Dynamic modal content will be populated here -->
+      </div>
+    </div>
+  </div>
   <footer class="footer">
     <div class="footer-content">
       <div>
@@ -95,6 +59,8 @@
 
     <p class="copyright">&copy; 2026 Ruler Tours. All rights reserved</p>
   </footer>
+  <script src="toursData.js"></script>
+  <script src="tours.js"></script>
   <script src="script.js"></script>
 </body>
 

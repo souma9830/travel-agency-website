@@ -163,4 +163,14 @@ const resetPassword = async (req, res) => {
     }
 };
 
-module.exports = { register, login, sendPasswordResetOtp, resetPassword, forgotOtp };
+const logout = async (req, res) => {
+    try {
+        // Since we are using JWT in localStorage, backend logout is mostly symbolic.
+        // If we were using cookies, we would clear the cookie here.
+        res.status(200).json({ success: true, message: 'Logged out successfully' });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
+module.exports = { register, login, sendPasswordResetOtp, resetPassword, forgotOtp, logout };

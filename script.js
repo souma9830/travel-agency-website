@@ -214,23 +214,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (signupBtn) signupBtn.style.display = "none";
 
             if (authBtn) {
-                authBtn.style.display = "inline-block";
-                authBtn.textContent = "Logout";
-                authBtn.href = "#";
-                authBtn.classList.remove("btn-login");
-                authBtn.classList.add("btn-logout");
-                authBtn.style.padding = "8px 18px";
-                authBtn.style.backgroundColor = "#D32F2F";
-                authBtn.style.color = "#fff";
-                authBtn.style.border = "none";
-
-                authBtn.onclick = (e) => {
-                    e.preventDefault();
-                    localStorage.removeItem("token");
-                    localStorage.removeItem("user");
-                    showToast("Logged out successfully");
-                    setTimeout(() => { window.location.reload(); }, 1500);
-                };
+                authBtn.style.display = "none";
             }
 
             if (profileCont) {
@@ -417,4 +401,29 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Auth features can be handled separately if needed
 
 
+});
+
+/* ==============================
+   PASSWORD SHOW / HIDE TOGGLE
+============================== */
+
+const passwordToggles = document.querySelectorAll(".toggle-password");
+
+passwordToggles.forEach(icon => {
+    icon.addEventListener("click", function () {
+
+        const input = document.getElementById(this.dataset.target);
+
+        if (!input) return;
+
+        if (input.type === "password") {
+            input.type = "text";
+            this.classList.remove("fa-eye");
+            this.classList.add("fa-eye-slash");
+        } else {
+            input.type = "password";
+            this.classList.remove("fa-eye-slash");
+            this.classList.add("fa-eye");
+        }
+    });
 });
