@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --- AUTH INTEGRATION ---
 
-    const API_URL = "http://localhost:3000/api/auth";
+    const API_URL = "https://travel-agency-website-e834.onrender.com/api/auth";
 
     // Helper for Toast Notifications
     function showToast(message, type = "success") {

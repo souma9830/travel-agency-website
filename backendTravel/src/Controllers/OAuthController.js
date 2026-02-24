@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const googleAuth = (req, res) => {
     const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
     const options = {
-        redirect_uri: `${process.env.API_URL || 'http://localhost:3000'}/api/oauth/callback/google`,
+        redirect_uri: `${process.env.API_URL || 'https://travel-agency-website-e834.onrender.com'}/api/oauth/callback/google`,
         client_id: process.env.GOOGLE_CLIENT_ID,
         access_type: 'offline',
         response_type: 'code',
@@ -35,7 +35,7 @@ const googleCallback = async (req, res) => {
                 code,
                 client_id: process.env.GOOGLE_CLIENT_ID,
                 client_secret: process.env.GOOGLE_CLIENT_SECRET,
-                redirect_uri: `${process.env.API_URL || 'http://localhost:3000'}/api/oauth/callback/google`,
+                redirect_uri: `${process.env.API_URL || 'https://travel-agency-website-e834.onrender.com'}/api/oauth/callback/google`,
                 grant_type: 'authorization_code',
             }).toString(),
         });
@@ -44,7 +44,7 @@ const googleCallback = async (req, res) => {
 
         if (!tokenResponse.ok) {
             console.error('Google OAuth token error:', tokenData);
-            const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5500';
+            const frontendUrl = process.env.FRONTEND_URL || 'https://travel-agency-website-e834.onrender.com';
             return res.redirect(`${frontendUrl}?error=oauth_token_failed`);
         }
 
@@ -56,7 +56,7 @@ const googleCallback = async (req, res) => {
         const userData = await userResponse.json();
         if (!userResponse.ok) {
             console.error('Google OAuth user data error:', userData);
-            const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5500';
+            const frontendUrl = process.env.FRONTEND_URL || 'https://travel-agency-website-e834.onrender.com';
             return res.redirect(`${frontendUrl}?error=oauth_userinfo_failed`);
         }
 
@@ -79,13 +79,13 @@ const googleCallback = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
         // Redirect seamlessly back to frontend with token and user data
-        const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5500';
+        const frontendUrl = process.env.FRONTEND_URL || 'https://travel-agency-website-e834.onrender.com';
         const userObj = JSON.stringify({ id: user._id, name: user.name, email: user.email });
         res.redirect(`${frontendUrl}?token=${token}&user=${encodeURIComponent(userObj)}`);
 
     } catch (error) {
         console.error('Google OAuth Callback Error:', error);
-        const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5500';
+        const frontendUrl = process.env.FRONTEND_URL || 'https://travel-agency-website-e834.onrender.com';
         res.redirect(`${frontendUrl}?error=oauth_server_error`);
     }
 };
