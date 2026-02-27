@@ -14,6 +14,22 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    bio: {
+        type: String,
+        default: ''
+    },
+    phone: {
+        type: String,
+        default: ''
+    },
+    address: {
+        type: String,
+        default: ''
+    },
+    interests: {
+        type: [String],
+        default: []
+    },
     resetOtp: {
         type: String,
         default: ''
