@@ -16,6 +16,21 @@
 
     <div class="nav-right">
         <button id="theme-toggle">🌙</button>
+
+        <!-- Auth Buttons -->
+        <a href="login.html" id="auth-btn" class="btn-login">Login</a>
+        <a href="signup.html" id="signup-btn" class="btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">Sign
+            Up</a>
+
+        <!-- Profile (Hidden by default) -->
+        <div class="profile-container" id="profile-trigger">
+            <img src="" class="profile-avatar" alt="User">
+            <div class="profile-dropdown" id="profile-dropdown">
+                <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+
         <div class="hamburger" id="hamburger">☰</div>
     </div>
 </nav>
