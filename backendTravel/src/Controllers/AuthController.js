@@ -73,7 +73,7 @@ const sendOtp = async (req, res) => {
 
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
         const otpExpiry = type === 'password-reset' ? 15 * 60 * 1000 : 10 * 60 * 1000;
-        
+
         user.resetOtp = otp;
         user.resetOtpExpire = Date.now() + otpExpiry;
         await user.save();
@@ -81,7 +81,7 @@ const sendOtp = async (req, res) => {
         const isPasswordReset = type === 'password-reset';
         const expiryMinutes = isPasswordReset ? 15 : 10;
         const title = isPasswordReset ? 'Reset Your Password' : 'Verify Your Account';
-        const text = isPasswordReset 
+        const text = isPasswordReset
             ? `Your OTP for password reset is ${otp}. It is valid for ${expiryMinutes} minutes.`
             : `Your verification OTP is ${otp}. It is valid for ${expiryMinutes} minutes. Please do not share it with anyone.`;
         const subject = isPasswordReset ? 'Password Reset OTP 🔐' : 'Verification OTP 🔐';
@@ -149,4 +149,45 @@ const logout = async (req, res) => {
     }
 };
 
-module.exports = { register, login, sendPasswordResetOtp, resetPassword, forgotOtp, logout };
+const getProfile = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        const user = await User.findById(userId).select('-password');
+        if (!user) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+        res.status(200).json({ success: true, user });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
+const updateProfile = async (req, res) => {
+    try {
+        const { userId, name, bio, phone, address, interests } = req.body;
+
+        const updatedData = {
+            name,
+            bio,
+            phone,
+            address,
+            interests: Array.isArray(interests) ? interests : interests?.split(',').map(i => i.trim()) || []
+        };
+
+        const user = await User.findByIdAndUpdate(userId, updatedData, { new: true }).select('-password');
+
+        if (!user) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: 'Profile updated successfully',
+            user
+        });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
+module.exports = { register, login, sendPasswordResetOtp, resetPassword, forgotOtp, logout, getProfile, updateProfile };

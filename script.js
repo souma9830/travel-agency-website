@@ -61,7 +61,9 @@ async function loadNavbarComponent() {
             links.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href && !href.startsWith('http') && !href.startsWith('#')) {
-                    let newHref = href;
+                    const isTargetInHtmlFolder = href.startsWith('html/');
+                    const cleanHref = isTargetInHtmlFolder ? href.replace('html/', '') : href;
+
                     if (isInHtmlFolder) {
                         if (href.startsWith('html/')) {
                             newHref = href.replace('html/', '');
@@ -69,7 +71,6 @@ async function loadNavbarComponent() {
                             newHref = '../' + href;
                         }
                     }
-                    link.setAttribute('href', newHref);
                 }
             });
 
@@ -309,6 +310,46 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Initialize UI on page load
     updateNavForUser();
 
+    // --- PROFILE DROPDOWN logic ---
+    function setupProfileDropdown() {
+        const profileTrigger = document.getElementById('profile-trigger');
+        const profileDropdown = document.getElementById('profile-dropdown');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        if (profileTrigger && profileDropdown) {
+            // Toggle dropdown on click
+            profileTrigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                profileDropdown.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking elsewhere
+            document.addEventListener('click', function (e) {
+                if (!profileTrigger.contains(e.target)) {
+                    profileDropdown.classList.remove('active');
+                }
+            });
+        }
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Clear auth data
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+
+                showToast("Logged out successfully");
+
+                // Redirect to home and refresh
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 1000);
+            });
+        }
+    }
+
     // Sign Up Logic
     const signupForm = document.getElementById("signupForm");
     if (signupForm) {
@@ -457,9 +498,144 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    // (Old checkAuth and profile dropdown removed. Navbar is now simplified to core navigation only)
-    // Auth features can be handled separately if needed
+    // Initialize UI on page load
+    updateNavForUser();
+    setupProfileDropdown();
+    // --- PROFILE MANAGEMENT (profile.html) ---
+    if (window.location.pathname.includes('profile.html')) {
+        const displaySection = document.getElementById('profile-display');
+        const editForm = document.getElementById('profile-edit-form');
+        const editBtn = document.getElementById('edit-profile-btn');
+        const cancelBtn = document.getElementById('cancel-edit');
+        const displayActions = document.getElementById('display-actions');
 
+        const fetchProfile = async () => {
+            const token = localStorage.getItem('token');
+            if (!token) return;
+
+            try {
+                const response = await fetch(`${API_URL}/get-profile`, {
+                    method: 'GET',
+                    headers: { 'token': token }
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    const user = data.user;
+                    // Update Display
+                    document.getElementById('display-name').textContent = user.name || 'Not set';
+                    document.getElementById('display-email').textContent = user.email || 'Not set';
+                    document.getElementById('display-phone').textContent = user.phone || 'Not set';
+                    document.getElementById('display-address').textContent = user.address || 'Not set';
+                    document.getElementById('display-bio').textContent = user.bio || 'No bio added';
+
+                    const interestsCont = document.getElementById('display-interests');
+                    interestsCont.innerHTML = '';
+                    if (user.interests && user.interests.length > 0) {
+                        user.interests.forEach(interest => {
+                            const span = document.createElement('span');
+                            span.className = 'interest-tag';
+                            span.textContent = interest;
+                            interestsCont.appendChild(span);
+                        });
+                    } else {
+                        interestsCont.innerHTML = '<span style="color: #888;">No interests added</span>';
+                    }
+
+                    // Pre-fill Edit Form
+                    document.getElementById('edit-name').value = user.name || '';
+                    document.getElementById('edit-phone').value = user.phone || '';
+                    document.getElementById('edit-address').value = user.address || '';
+                    document.getElementById('edit-bio').value = user.bio || '';
+                    document.getElementById('edit-interests').value = user.interests ? user.interests.join(', ') : '';
+
+                    // Update Avatar
+                    const avatarImg = document.querySelector('.profile-img-large');
+                    if (avatarImg) {
+                        avatarImg.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=0D8ABC&color=fff&size=150`;
+                    }
+                    const profileLeftName = document.querySelector('.profile-left h2');
+                    if (profileLeftName) profileLeftName.textContent = user.name;
+                    const profileLeftBio = document.querySelector('.profile-left p');
+                    if (profileLeftBio) profileLeftBio.textContent = user.bio || 'Adventure Enthusiast';
+
+                } else {
+                    showToast(data.message, 'error');
+                }
+            } catch (error) {
+                console.error('Error fetching profile:', error);
+            }
+        };
+
+        // Initial fetch
+        fetchProfile();
+
+        // Toggle Edit Mode
+        if (editBtn) {
+            editBtn.addEventListener('click', () => {
+                displaySection.style.display = 'none';
+                displayActions.style.display = 'none';
+                editForm.style.display = 'block';
+            });
+        }
+
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                editForm.style.display = 'none';
+                displaySection.style.display = 'grid';
+                displayActions.style.display = 'block';
+            });
+        }
+
+        // Handle Form Submission
+        if (editForm) {
+            editForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const token = localStorage.getItem('token');
+
+                const updatedData = {
+                    name: document.getElementById('edit-name').value,
+                    phone: document.getElementById('edit-phone').value,
+                    address: document.getElementById('edit-address').value,
+                    bio: document.getElementById('edit-bio').value,
+                    interests: document.getElementById('edit-interests').value
+                };
+
+                try {
+                    const response = await fetch(`${API_URL}/update-profile`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'token': token
+                        },
+                        body: JSON.stringify(updatedData)
+                    });
+                    const data = await response.json();
+
+                    if (data.success) {
+                        showToast('Profile updated successfully!');
+                        // Update localStorage name if changed
+                        const localUser = JSON.parse(localStorage.getItem('user'));
+                        localUser.name = updatedData.name;
+                        localStorage.setItem('user', JSON.stringify(localUser));
+
+                        // Switch back to display mode
+                        editForm.style.display = 'none';
+                        displaySection.style.display = 'grid';
+                        displayActions.style.display = 'block';
+
+                        // Re-fetch to update display
+                        fetchProfile();
+                        updateNavForUser(); // Update navbar avatar name
+                    } else {
+                        showToast(data.message, 'error');
+                    }
+                } catch (error) {
+                    showToast('Failed to update profile', 'error');
+                }
+            });
+        }
+    }
 
 });
 
