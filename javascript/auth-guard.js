@@ -7,10 +7,7 @@
 
     const normalizedPage = (currentPage === "" || currentPage === "Travel%20agency") ? "index.html" : currentPage;
 
-    if (!token && !publicPages.includes(normalizedPage)) {
-        const prefix = isInHtmlFolder ? "../" : "";
-        window.location.href = prefix + "login.html";
-    } else if (token && publicPages.includes(normalizedPage)) {
+    if (token && publicPages.includes(normalizedPage)) {
         const prefix = isInHtmlFolder ? "../" : "";
         window.location.href = prefix + "index.html";
     }

@@ -65,18 +65,10 @@ async function loadNavbarComponent() {
                     const cleanHref = isTargetInHtmlFolder ? href.replace('html/', '') : href;
 
                     if (isInHtmlFolder) {
-                        // We are in /html/ folder
-                        if (isTargetInHtmlFolder) {
-                            link.setAttribute('href', cleanHref);
+                        if (href.startsWith('html/')) {
+                            newHref = href.replace('html/', '');
                         } else {
-                            link.setAttribute('href', '../' + cleanHref);
-                        }
-                    } else {
-                        // We are in root folder
-                        if (isTargetInHtmlFolder) {
-                            link.setAttribute('href', 'html/' + cleanHref);
-                        } else {
-                            link.setAttribute('href', cleanHref);
+                            newHref = '../' + href;
                         }
                     }
                 }
