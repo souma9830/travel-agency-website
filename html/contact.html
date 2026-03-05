@@ -14,10 +14,12 @@
 <body>
   <section>
     <h2>Get in Touch</h2>
-    <form style="max-width: 400px; display: flex; flex-direction: column; gap: 10px;">
-      <input type="text" placeholder="Your Name" style="padding: 10px;">
-      <input type="email" placeholder="Your Email" style="padding: 10px;">
-      <textarea placeholder="Your Message" rows="5" style="padding: 10px;"></textarea>
+    <form method="POST"
+      style="max-width: 400px; display: flex; flex-direction: column; gap: 10px;" id="contactForm">
+
+      <input name="name" type="text" placeholder="Your Name" style="padding: 10px;">
+      <input name="email" type="email" placeholder="Your Email" style="padding: 10px;">
+      <textarea name="message" placeholder="Your Message" rows="5" style="padding: 10px;"></textarea>
       <button type="submit" style="padding: 10px; background: black; color: white; cursor: pointer;">Send
         Message</button>
     </form>
@@ -69,6 +71,8 @@
     <div class="footer-bottom">
       <p>© 2026 Ruler Tours. All rights reserved.</p>
     </div>
+
+    <script src="../javascript/config-form.js"></script>
     <script src="../script.js"></script>
 </body>
 
