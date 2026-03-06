@@ -78,36 +78,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     console.log("URL Params parsed:", window.location.search);
 
-    const oauthToken = urlParams.get('token');
     const oauthUser = urlParams.get('user');
 
-    console.log("Extracted token:", oauthToken ? "Yes (hidden)" : "No");
     console.log("Extracted user string:", oauthUser);
 
-    if (oauthToken) {
-        // Token is now handled via httpOnly cookies, not localStorage
-        if (oauthUser) {
-            try {
-                // Ensure it's valid JSON before saving
-                const parsed = JSON.parse(oauthUser);
-                console.log("Successfully parsed user object:", parsed);
-                localStorage.setItem('user', oauthUser);
-            } catch (e) {
-                console.error("Failed to parse oauthUser from URL:", e);
-                console.error("Raw oauthUser string was:", oauthUser);
+    if (oauthUser) {
+        // User data is now passed without token in URL
+        try {
+            // Ensure it's valid JSON before saving
+            const parsed = JSON.parse(oauthUser);
+            console.log("Successfully parsed user object:", parsed);
+            localStorage.setItem('user', oauthUser);
+            
+            // Clear user from URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+            showToast("Successfully logged in with Google!");
+            // Redirect to home if on auth pages
+            if (window.location.pathname.includes("login.html") || window.location.pathname.includes("signup.html")) {
+                setTimeout(() => { window.location.href = "index.html"; }, 1500);
+            } else {
+                updateNavForUser();
             }
-        } else {
-            console.warn("oauthToken found, but oauthUser is null or missing in URL");
-        }
-
-        // Clear token from URL
-        window.history.replaceState({}, document.title, window.location.pathname);
-        showToast("Successfully logged in with Google!");
-        // Redirect to home if on auth pages
-        if (window.location.pathname.includes("login.html") || window.location.pathname.includes("signup.html")) {
-            setTimeout(() => { window.location.href = "index.html"; }, 1500);
-        } else {
-            updateNavForUser();
+        } catch (e) {
+            console.error("Failed to parse oauthUser from URL:", e);
+            console.error("Raw oauthUser string was:", oauthUser);
         }
     }
 

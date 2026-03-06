@@ -78,10 +78,10 @@ const googleCallback = async (req, res) => {
         // Generate JWT Token
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
-        // Redirect seamlessly back to frontend with token and user data
+        // Redirect seamlessly back to frontend with user data only (no token in URL)
         const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5500';
         const userObj = JSON.stringify({ id: user._id, name: user.name, email: user.email });
-        res.redirect(`${frontendUrl}?token=${token}&user=${encodeURIComponent(userObj)}`);
+        res.redirect(`${frontendUrl}?user=${encodeURIComponent(userObj)}`);
 
     } catch (error) {
         console.error('Google OAuth Callback Error:', error);
