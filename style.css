@@ -106,7 +106,7 @@ body.dark .navbar {
 body.dark .page-hero {
     background:
         linear-gradient(rgba(5, 15, 25, 0.75), rgba(5, 15, 25, 0.7)),
-        url("/assets/bg.png") center/cover no-repeat;
+        url("assets/bg.png") center/cover no-repeat;
 }
 
 /* Hero Section */
@@ -114,7 +114,7 @@ body.dark .page-hero {
 body.dark .hero {
     background:
         linear-gradient(rgba(5, 15, 25, 0.75), rgba(5, 15, 25, 0.7)),
-        url("/assets/hbg.png") center/cover no-repeat;
+        url("assets/hbg.png") center/cover no-repeat;
 }
 
 body.dark .hero h1 {
@@ -411,7 +411,7 @@ body.dark .navbar {
     height: 100vh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.55)),
-        url("/assets/hbg.png") center/cover no-repeat;
+        url("assets/hbg.png") center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -444,7 +444,7 @@ body.dark .navbar {
     height: 40vh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)),
-        url("/assets/bg.png") center/cover no-repeat;
+        url("assets/bg.png") center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;

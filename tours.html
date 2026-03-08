@@ -1,69 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ruler Tours</title>
-    <link rel="icon" type="image/png" href="assets/light_logo.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="javascript/auth-guard.js"></script>
-  </head>
 
-  <body>
-    <section class="page-hero">
-      <h1>Next-Gen Tour Packages</h1>
-    </section>
-    <section class="card-container" id="tour-cards-container">
-      <!-- Dynamic cards will be generated here -->
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruler Tours</title>
+  <link rel="icon" type="image/png" href="assets/light_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="javascript/auth-guard.js"></script>
+</head>
 
-    <!-- Tour Details Modal -->
-    <div id="tourModal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn" id="closeModal">&times;</span>
-        <div id="modal-body">
-          <!-- Dynamic modal content will be populated here -->
+<body>
+  <section class="page-hero">
+    <h1>Next-Gen Tour Packages</h1>
+  </section>
+  <section class="card-container" id="tour-cards-container">
+    <!-- Dynamic cards will be generated here -->
+  </section>
+
+  <!-- Tour Details Modal -->
+  <div id="tourModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div id="modal-body">
+        <!-- Dynamic modal content will be populated here -->
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h3>Ruler Tours</h3>
+        <p>Next-gen travel & premium itineraries</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <p><a href="tours.html">Tours</a></p>
+        <p><a href="rentals.html">Rentals</a></p>
+      </div>
+
+      <div>
+        <h4>Connect</h4>
+        <p>+1 800 555 RULER</p>
+        <p>info@rulertours.com</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="footer-content">
-        <div>
-          <h3>Ruler Tours</h3>
-          <p>Next-gen travel & premium itineraries</p>
-        </div>
 
-        <div>
-          <h4>Explore</h4>
-          <p><a href="tours.html">Tours</a></p>
-          <p><a href="rentals.html">Rentals</a></p>
-        </div>
+    <p class="copyright">&copy; 2026 Ruler Tours. All rights reserved.</p>
+  </footer>
+  <script src="toursData.js"></script>
+  <script src="tours.js"></script>
+  <script src="script.js"></script>
+</body>
 
-        <div>
-          <h4>Connect</h4>
-          <p>+1 800 555 RULER</p>
-          <p>info@rulertours.com</p>
-          <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <p class="copyright">&copy; 2026 Ruler Tours. All rights reserved.</p>
-    </footer>
-    <script src="/javascript/toursData.js"></script>
-    <script src="/javascript/tours.js"></script>
-    <script src="/javascript/script.js"></script>
-  </body>
 </html>
