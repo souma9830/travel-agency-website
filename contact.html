@@ -3,32 +3,28 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Tour Details - Ruler Tours</title>
+  <title>Contact Us - Ruler Tours</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="..//css/style.css">
   <link rel="stylesheet" href="../css/footer.css">
   <script src="../javascript/auth-guard.js"></script>
 </head>
 
 <body>
   <section>
-    <h1 id="package-title">Darjeeling Tea Garden Special</h1>
-    <div style="display:flex; gap:30px;">
-      <div style="flex:1; border:1px solid #ddd; padding:50px; text-align:center;">
-        [Image: Kanchenjunga View Placeholder]
-      </div>
-      <div style="flex:1;">
-        <h3>What you'll experience:</h3>
-        <ul>
-          <li>Stay in a heritage Tea Bungalow</li>
-          <li>Visit to the Himalayan Mountaineering Institute</li>
-          <li>Peace Pagoda visit at sunset</li>
-        </ul>
-        <p><strong>Region:</strong> North Bengal, India</p>
-        <button style="padding:15px; width:100%; background:black; color:white;">Check Availability</button>
-      </div>
-    </div>
+    <h2>Get in Touch</h2>
+    <form method="POST"
+      style="max-width: 400px; display: flex; flex-direction: column; gap: 10px;" id="contactForm">
+
+      <input name="name" type="text" placeholder="Your Name" style="padding: 10px;">
+      <input name="email" type="email" placeholder="Your Email" style="padding: 10px;">
+      <textarea name="message" placeholder="Your Message" rows="5" style="padding: 10px;"></textarea>
+      <button type="submit" style="padding: 10px; background: black; color: white; cursor: pointer;">Send
+        Message</button>
+    </form>
   </section>
+
   <footer class="footer">
     <div class="footer-container">
 
@@ -46,20 +42,20 @@
         <h3>Quick Links</h3>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="html/destinations.html">Tours</a></li>
-          <li><a href="html/rentals.html">Rentals</a></li>
-          <li><a href="html/about.html">About</a></li>
-          <li><a href="html/contact.html">Contact</a></li>
+          <li><a href="/destinations.html">Tours</a></li>
+          <li><a href="/rentals.html">Rentals</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
         <h3>Services</h3>
         <ul>
-          <li><a href="html/destinations.html">Luxury Tours</a></li>
-          <li><a href="html/rentals.html">Car Rentals</a></li>
-          <li><a href="html/contact.html">Corporate Trips</a></li>
-          <li><a href="html/package.html">Custom Packages</a></li>
+          <li><a href="/destinations.html">Luxury Tours</a></li>
+          <li><a href="/rentals.html">Car Rentals</a></li>
+          <li><a href="/contact.html">Corporate Trips</a></li>
+          <li><a href="/package.html">Custom Packages</a></li>
         </ul>
       </div>
 
@@ -75,8 +71,9 @@
     <div class="footer-bottom">
       <p>© 2026 Ruler Tours. All rights reserved.</p>
     </div>
-    <script src="../script.js"></script>
-  </footer>
+
+    <script src="/javascript/config-form.js"></script>
+    <script src="/javascript/script.js"></script>
 </body>
 
 </html>

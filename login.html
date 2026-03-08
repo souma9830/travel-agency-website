@@ -1,66 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Ruler Tours</title>
-    <link rel="icon" type="image/png" href="assets/light_logo.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/light_logo.png" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <script src="javascript/auth-guard.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="auth-section">
-        <div class="auth-container">
-            <h2>Welcome Back</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <input type="email" id="loginEmail" placeholder="Email Address" required>
-                </div>
-                <div class="form-group password-group">
-                    <input type="password" id="loginPassword" placeholder="Password" required>
-                    <i class="fa-solid fa-eye toggle-password" data-target="loginPassword"></i>
-                </div>
-                <button type="submit" class="btn-primary" style="width: 100%;">Login</button>
-            </form>
-            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-        </div>
+      <div class="auth-container">
+        <h2>Welcome Back</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="form-group password-group">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+            <i
+              class="fa-solid fa-eye toggle-password"
+              data-target="loginPassword"
+            ></i>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%">
+            Login
+          </button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      </div>
     </section>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h3>Ruler Tours</h3>
-                <p>Discover rural beauty & eco adventures</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <p><a href="tours.html">Tours</a></p>
-                <p><a href="rentals.html">Rentals</a></p>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <p>+91 98765 43210</p>
-                <p>info@rulertours.com</p>
-                <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div>
+          <h3>Ruler Tours</h3>
+          <p>Discover rural beauty & eco adventures</p>
         </div>
-        <p class="copyright">&copy; 2026 Ruler Tours. All rights reserved</p>
+        <div>
+          <h4>Quick Links</h4>
+          <p><a href="tours.html">Tours</a></p>
+          <p><a href="rentals.html">Rentals</a></p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>+91 98765 43210</p>
+          <p>info@rulertours.com</p>
+          <div class="social-links">
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 Ruler Tours. All rights reserved</p>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="script.js"></script>
-</body>
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="/javascript/script.js"></script>
+  </body>
 </html>
