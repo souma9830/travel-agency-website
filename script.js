@@ -25,7 +25,6 @@ async function loadNavbarComponent() {
                 <li><a href="tours.html" data-page="tours.html">Tours</a></li>
                 <li><a href="rentals.html" data-page="rentals.html">Rentals</a></li>
                 <li><a href="html/about.html" data-page="about.html">About</a></li>
-                <li><a href="html/contact.html" data-page="contact.html">Contact</a></li>
             </ul>
 
             <div class="nav-right">

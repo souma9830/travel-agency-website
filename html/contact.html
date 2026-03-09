@@ -3,77 +3,105 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Contact Us - Ruler Tours</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/global.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Ruler Tours - Premium Travel Concierge</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/contact.css">
   <script src="../javascript/auth-guard.js"></script>
 </head>
 
-<body>
-  <section>
-    <h2>Get in Touch</h2>
-    <form method="POST"
-      style="max-width: 400px; display: flex; flex-direction: column; gap: 10px;" id="contactForm">
+<body class="dark">
 
-      <input name="name" type="text" placeholder="Your Name" style="padding: 10px;">
-      <input name="email" type="email" placeholder="Your Email" style="padding: 10px;">
-      <textarea name="message" placeholder="Your Message" rows="5" style="padding: 10px;"></textarea>
-      <button type="submit" style="padding: 10px; background: black; color: white; cursor: pointer;">Send
-        Message</button>
-    </form>
-  </section>
+  <div id="navbar-container"></div>
 
-  <footer class="footer">
-    <div class="footer-container">
+  <header class="contact-hero">
+    <h1 class="reveal">Experience the VIP Service</h1>
+    <p class="reveal">Our expert travel designers are ready to craft your next masterwork journey.</p>
+  </header>
 
-      <div class="footer-brand">
-        <h2>Ruler Tours</h2>
-        <p>Premium tours and vehicle rentals crafted for modern explorers. Travel with confidence and class.</p>
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+  <main class="contact-main">
+    <div class="contact-grid">
+
+      <div class="contact-info-panel reveal">
+        <div class="info-card">
+          <i class="fas fa-paper-plane"></i>
+          <h3>Digital Concierge</h3>
+          <p>Reach us anytime for booking inquiries<br><strong>info@rulertours.com</strong></p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-phone-alt"></i>
+          <h3>Direct Connect</h3>
+          <p>Speak with a travel expert directly<br><strong>+1 800 555 RULER</strong></p>
+        </div>
+
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Global Headquarters</h3>
+          <p>Metro City Hub, Sector 4<br>New Delhi, India</p>
         </div>
       </div>
 
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="html/destinations.html">Tours</a></li>
-          <li><a href="html/rentals.html">Rentals</a></li>
-          <li><a href="html/about.html">About</a></li>
-          <li><a href="html/contact.html">Contact</a></li>
-        </ul>
-      </div>
 
-      <div class="footer-links">
-        <h3>Services</h3>
-        <ul>
-          <li><a href="html/destinations.html">Luxury Tours</a></li>
-          <li><a href="html/rentals.html">Car Rentals</a></li>
-          <li><a href="html/contact.html">Corporate Trips</a></li>
-          <li><a href="html/package.html">Custom Packages</a></li>
-        </ul>
+      <div class="contact-form-panel reveal">
+        <h2>Send an Inquiry</h2>
+        <form id="contactForm" method="POST">
+          <div class="premium-input-group">
+            <input type="text" name="name" placeholder="Your Full Name" required>
+          </div>
+          <div class="premium-input-group">
+            <input type="email" name="email" placeholder="Professional Email" required>
+          </div>
+          <div class="premium-input-group">
+            <input type="tel" name="phone" placeholder="Contact Number (Optional)">
+          </div>
+          <div class="premium-input-group">
+            <textarea name="message" rows="6" placeholder="Tell us about your dream destination..." required></textarea>
+          </div>
+          <button type="submit" class="btn-premium-send">Send Message</button>
+        </form>
       </div>
-
-      <div class="footer-contact">
-        <h3>Contact Us</h3>
-        <p><i class="fas fa-envelope"></i> info@rulertours.com</p>
-        <p><i class="fas fa-phone"></i> +91 Your Number</p>
-        <p><i class="fas fa-map-marker-alt"></i> City, India</p>
-      </div>
-
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2026 Ruler Tours. All rights reserved.</p>
+    <div class="map-placeholder reveal">
+      <div style="text-align: center;">
+        <i class="fas fa-globe-americas" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 20px;"></i>
+        <h3>Interactive Destination Map Loading...</h3>
+        <p>Visit us at our Delhi HQ for a personalized VR tour of your next destination.</p>
+      </div>
     </div>
+  </main>
 
-    <script src="../javascript/config-form.js"></script>
-    <script src="../script.js"></script>
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h3>Ruler Tours</h3>
+        <p>Next-gen travel & premium itineraries</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <p><a href="../tours.html">Tours</a></p>
+        <p><a href="../rentals.html">Rentals</a></p>
+      </div>
+
+      <div>
+        <h4>Social</h4>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Ruler Tours. All rights reserved.</p>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 
 </html>
