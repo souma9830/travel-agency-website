@@ -109,13 +109,7 @@ body.dark .page-hero {
         url("assets/bg.png") center/cover no-repeat;
 }
 
-/* Hero Section */
 
-body.dark .hero {
-    background:
-        linear-gradient(rgba(5, 15, 25, 0.75), rgba(5, 15, 25, 0.7)),
-        url("assets/hbg.png") center/cover no-repeat;
-}
 
 body.dark .hero h1 {
     white-space: nowrap;
@@ -1404,4 +1398,27 @@ body.modal-open {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+.hero{
+    background:url("assets/hero-light.png") center/cover no-repeat;
+}
+
+
+/* Default (Light Mode) */
+.hero{
+    background-image:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("../assets/hero-light.png"); /* adjust path if needed */
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+/* Dark Mode — stronger overlay */
+body.dark .hero{
+    background:
+        linear-gradient(rgba(5, 15, 25, 0.75), rgba(5, 15, 25, 0.7)),
+        url("assets/hero.png") center/cover no-repeat;
 }
