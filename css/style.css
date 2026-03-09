@@ -1402,7 +1402,7 @@ body.modal-open {
 
 
 .hero{
-    background:url("assets/hero-light.png") center/cover no-repeat;
+    background:url("/assets/hero-light.png") center/cover no-repeat;
 }
 
 
@@ -1410,7 +1410,7 @@ body.modal-open {
 .hero{
     background-image:
         linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-        url("../assets/hero-light.png"); /* adjust path if needed */
+        url("/assets/hero-light.png"); /* adjust path if needed */
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat;
@@ -1420,5 +1420,5 @@ body.modal-open {
 body.dark .hero{
     background:
         linear-gradient(rgba(5, 15, 25, 0.75), rgba(5, 15, 25, 0.7)),
-        url("assets/hero.png") center/cover no-repeat;
+        url("/assets/hero.png") center/cover no-repeat;
 }
