@@ -48,7 +48,20 @@ async function loadNavbarComponent() {
 
         // Insert navbar at top of body
         document.body.insertAdjacentHTML('afterbegin', navbarHTML);
-    
+
+        // --- DYNAMIC LINK FIXING ---
+        const isInHtmlFolder = window.location.pathname.includes('/html/');
+        const prefix = isInHtmlFolder ? '../' : '';
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            // Fix Logo Path
+            const logo = navbar.querySelector('#logo');
+            if (logo) {
+                // Initial logo based on current body class
+                const isDark = document.body.classList.contains('dark');
+                logo.src = prefix + (isDark ? 'assets/light_logo.png' : 'assets/dark_logo.png');
+            }
+        }
 
         console.log('✅ Navbar injected locally and links adjusted');
         return true;
@@ -63,15 +76,15 @@ function updateLogoForTheme() {
     const logoImg = document.getElementById('logo');
     if (!logoImg) return;
 
-    const isLight = window.location.pathname.includes('/html/');
+    const isLightPage = window.location.pathname.includes('/html/');
     const darkThemeActive = document.body.classList.contains('dark');
 
-    if (isLight) {
+    if (isLightPage) {
         // Pages in /html folder
-        logoImg.src = darkThemeActive ? '../assets/dark_logo.png' : '../assets/light_logo.png';
+        logoImg.src = darkThemeActive ? '../assets/light_logo.png' : '../assets/dark_logo.png';
     } else {
         // Root level pages
-        logoImg.src = darkThemeActive ? 'assets/dark_logo.png' : 'assets/light_logo.png';
+        logoImg.src = darkThemeActive ? 'assets/light_logo.png' : 'assets/dark_logo.png';
     }
 }
 

@@ -97,7 +97,6 @@ body.dark .navbar {
   );
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  height: 80px;
   padding: 0 40px;
   display: flex;
   align-items: center;
@@ -306,7 +305,7 @@ body.dark .navbar {
 }
 
 .logo {
-  height: 42px;
+  height: 80px;
 }
 
 .logo-link {

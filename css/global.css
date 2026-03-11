@@ -88,15 +88,15 @@ footer {
 
 /* NAVBAR & PROFILE (From style.css) */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 60px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: linear-gradient(to right, #2E7D32, #FFB74D);
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(to right, #2e7d32, #ffb74d);
+  color: white;
 }
 
 .nav-left,
@@ -109,7 +109,7 @@ footer {
 }
 
 .logo {
-    height: 42px;
+    height: 80px;
 }
 
 .nav-links {
